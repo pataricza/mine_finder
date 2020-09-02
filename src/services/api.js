@@ -8,6 +8,12 @@ const api = axios.create({
   },
 });
 
-export const getData = (url) => api.get(url).then((response) => response.data); // eslint-disable-line 
+export const getData = (url) => api.get(url).then((response) => response.data);
 
-// export const postData ÍRD MEG MAGADNAK
+// export const getData = (url) => {
+//   return new Promise((resolve, reject) => {
+//       api.get(url).then(res => {
+//           resolve(res.data);
+//       }).catch(err => reject(err));
+//   });
+// };
