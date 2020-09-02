@@ -7,6 +7,7 @@ import * as API from '../../services/api'
 
 const name = 'Start Game'
 const table = '/table'
+const step = '/step'
 
 const Board = () => {
   const [board, setBoard] = useState({
@@ -27,16 +28,25 @@ const Board = () => {
       .catch(error => setError(error))
   }, []);
 
-  let s = board.fields[1];
-  if(s) {
-    console.log(s[1])
+  const handleSquareClick = (width, height) => {
+    const params = new URLSearchParams([['width', width], ['height', height]])
+    API.getWithParams(`${process.env.REACT_APP_API}${step}`, params).then(data => {
+      setBoard(data)
+    })
+    .catch(error => setError(error))
   }
   
   const render10Square = (row) => {
     const tenTiles = [];
     for(var i = 0; i < 10; i++) {
       let key = (row+1)*(i+1);
-      tenTiles[i] = <Square key={key} value={board.fields[row][i]}/>
+      tenTiles[i] = <Square 
+                      key={key} 
+                      value={board.fields[row][i]} 
+                      width={row} 
+                      height={i}
+                      handleClick={handleSquareClick}
+                    />
     }
     return tenTiles
   }
@@ -52,12 +62,6 @@ const Board = () => {
     }
     return tiles;
   }
-  
-
-  const handleClick = () => {
-    console.log("lofaszka")
-    alert('valami lofasz')
-  }
 
   if(error) {
     return(
@@ -69,7 +73,7 @@ const Board = () => {
     return(
       <div>
         <Button
-          handleClick={handleClick}
+          // handleClick={handleClick}
           name={name}
         />
         {renderBoard()}

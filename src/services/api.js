@@ -9,6 +9,7 @@ const api = axios.create({
 });
 
 export const getData = (url) => api.get(url).then((response) => response.data);
+export const getWithParams = (url, params) => api.get(url, { params }).then((response) => response.data)
 
 // export const getData = (url) => {
 //   return new Promise((resolve, reject) => {
