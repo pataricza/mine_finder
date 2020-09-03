@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Square from '../../components/Square/Square'
+import Square from '../Square/Square'
 import './Board.scss'
-import Button from '../../components/Button/Button'
-import LoadingScreen from '../../components/LoadingScreen/LoadingScreen'
+import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import * as API from '../../services/api'
 
-const name = 'Start Game'
 const table = '/table'
 const step = '/step'
 
@@ -72,10 +70,6 @@ const Board = () => {
   } else if(loaded) {
     return(
       <div>
-        <Button
-          // handleClick={handleClick}
-          name={name}
-        />
         {renderBoard()}
       </div>
     )

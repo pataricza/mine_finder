@@ -1,5 +1,5 @@
 .square {
-  background: #fff;
+  background: rgb(121, 121, 121);
   border: 1px solid #999;
   float: left;
   font-size: 24px;
@@ -11,5 +11,13 @@
   padding: 0;
   text-align: center;
   width: 34px;
+}
+
+.white {
+  background: rgb(245, 231, 170)
+}
+
+.red {
+  background: rgb(255, 44, 44)
 }
 

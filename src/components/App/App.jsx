@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
-import Board from '../../containers/Board/Board';
+import EntryPoint from '../../containers/EntryPoint';
 
 const App = () => {
   return (
-    <Board />
+    <EntryPoint />
   );
 }
 
