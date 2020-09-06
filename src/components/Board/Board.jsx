@@ -28,10 +28,11 @@ const Board = () => {
 
   const handleSquareClick = (width, height) => {
     const params = new URLSearchParams([['width', width], ['height', height]])
-    API.getWithParams(`${process.env.REACT_APP_API}${step}`, params).then(data => {
-      setBoard(data)
-    })
-    .catch(error => setError(error))
+    API.getWithParams(`${process.env.REACT_APP_API}${step}`, params)
+      .then(data => {
+        setBoard(data)
+      })
+      .catch(error => setError(error))
   }
   
   const render10Square = (row) => {

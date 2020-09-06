@@ -1,10 +1,8 @@
 import React from 'react'
 import * as API from '../services/api'
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Board from '../components/Board/Board';
 import StartingScreen from '../components/StartingScreen/StartingScreen';
-// import { Redirect } from 'react-router-dom';
 
 const running = '/running'
 

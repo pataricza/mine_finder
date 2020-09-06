@@ -9,7 +9,7 @@ import Board from '../components/Board/Board';
 import StartingScreen from '../components/StartingScreen/StartingScreen';
 
 const Router = () => {
-  return(
+  return( 
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
